@@ -1,0 +1,22 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container">
+    <div class = "options">
+        <a class="btn btn-primary" href="{{BASE}}user/profile" role="button">Nazad na komandu tablu</a>
+        <a class="btn btn-success" href="{{ BASE }}user/categories/add" role="button">Dodaj novu kategoriju</a>
+    </div>
+
+    <div class = "categories">
+        <ul>
+            {% for category in categories %}
+            <li>
+                <a href="{{ BASE }}user/categories/edit/{{ category.category_id }}">
+                    {{ category.name|escape }}
+                </a>         
+            {% endfor %}
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

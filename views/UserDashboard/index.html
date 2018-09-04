@@ -1,0 +1,10 @@
+{% extends "_global/index.html" %} {% block main %} {% spaceless %}
+<div class="options">
+    <div class="dashboard text-center">
+            <a class="btn btn-primary opcije" href="{{BASE}}user/categories" role="button">Uredi kategorije</a>
+        <a class="btn btn-secondary opcije" href="{{BASE}}user/manufacturers" role="button">Uredi proizvođače</a>
+        <a class="btn btn-warning opcije" href="{{BASE}}user/products" role="button">Uredi proizvode</a>
+       <!-- <a class="btn btn-info opcije" href="{{BASE}}user/orders" role="button">Upravljanje porudžbinama</a> -->
+    </div>
+</div>
+{% endspaceless %} {% endblock %}

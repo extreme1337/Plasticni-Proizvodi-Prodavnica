@@ -1,0 +1,40 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container">
+    <div class = "options">
+        <a class="btn btn-primary" href="{{ BASE }}user/manufacturers" role="button">Lista svih proizvođača</a>
+        <a class="btn btn-success opcije" href="{{ BASE }}user/manufacturers/add" role="button">Dodaj novog proizvođača</a>
+    </div>
+
+    <form class = "manufacturer-form col-12 col-sm-10 col-md-10 col-lg-8 col-xl-10" method="POST" >
+    <div class="card">
+            <div class="card-header">
+                    Uredi proizvođača
+                    </div>
+            <div class="card-body">         
+                    <div class="form-group"> 
+            <label for="name">Naziv proizvođača: </label>
+            <input type="text" id="name" name="name" required class="form-control" value="{{ manufacturer.name|escape }}">
+        </div>
+
+        <div class="form-group">
+            <label for="service">Usluga: </label>
+            <input type="text" id="service" name="service" required class="form-control" value="{{ manufacturer.service|escape }}">
+        </div>
+
+        <div class="form-group">
+            <label for="adress">Adresa: </label>
+            <input type="text" id="adress" name="adress" required class="form-control" value="{{ manufacturer.adress|escape }}">
+        </div>
+        </div>
+        <div class="card-footer">
+                <button type="submit" class="btn btn-primary">
+                Sačuvaj izmene
+            </button>
+        </div>
+        </div>
+</form>
+</div>
+{% endblock %}
+

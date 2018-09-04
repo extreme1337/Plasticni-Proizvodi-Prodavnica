@@ -1,0 +1,232 @@
+
+
+.navbar {
+    margin-bottom: 20px;
+    
+}
+.social-icons { 
+    margin-bottom: 10px;
+ }
+
+ .social-icons a i.fa {
+    color: #dc0004;
+    font-size: 20pt;
+    display: inline-block;
+    margin: 5px;
+ }
+
+.bojaKategorija {
+    color: #dc0004;
+    font-weight: bold;
+}
+
+.category {
+    padding: 0px 0px;
+}
+
+.nav-link {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 22px;
+}
+
+.list-group-item:last-child {
+    border-bottom-left-radius: 0rem;
+    border-bottom-right-radius: 0rem;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: 0rem;
+    border-top-right-radius: 0rem;
+}
+
+/*.list-group-item {border-bottom: none;}*/
+.list-group:not(:last-child) .list-group-item, .no-bottom-border {border-bottom: none;}
+
+.lista-proizvoda {margin-bottom: 30px; overflow:auto; padding: 10px 0 }
+.lista-proizvoda ul {padding: 0px; }
+.lista-proizvoda .kontejner-proizvoda {/*width: 23%; margin-right: 2.1%;*/ margin-bottom: 20px; display: inline-block; float: left; height: 450px; overflow: visible; }
+/*.lista-proizvoda ul li.kontejner-proizvoda:nth-child(4n) {margin-right: 0;}*/
+.moj-card:hover {-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);}
+.moj-card {height: 450px; overflow: hidden; display: inline-block; width: 100%;}
+.moj-card {background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;}
+.moj-card .slika {height: 200px; width: 100%; background-size:cover; background-position: center center;}
+.product-desc {font-size: 80%; margin-top: 10px; margin-bottom: 15px; display: block; height: 80px; overflow: hidden; border-bottom: 0px solid #000;}
+
+
+.vreme{
+    margin-top: 40px;
+}
+
+.opcije {
+    margin: 10px;
+}
+
+.site-footer {
+    margin-top: 30px;
+}
+
+.categories{
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 20px;
+   
+}
+
+.footer-top {
+    width: 100%;
+}
+
+.footer-lower {
+    width: 100%;
+}
+
+.footer-lower hr {
+    margin: 1rem 0;
+    border-color: black;
+    opacity: 0.5;
+}
+
+hr {
+    height: 0;
+    overflow: visible;
+    border-top: 1px solid;
+}
+
+.dashboard {
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+
+.text {
+    margin-bottom: 0px;
+    text-align: center;
+}
+
+.slika {
+    margin-bottom: 50px;
+}
+
+.radno-vreme {
+    text-align: right;
+    font-style: oblique;
+    font-weight: bold;
+}
+
+.cena {
+    font-weight: bold;
+    font-size: 26px;
+}
+
+
+
+
+/** {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    margin: 0 auto;
+    width: 900px;
+}
+
+.site-header {
+    display: grid;
+    grid-template-areas: "banner social"
+                         "banner search"
+                         "menu   menu  ";
+}
+
+.banners { grid-area: banner; }
+
+
+
+
+#main-menu {
+    margin: 20px 0px;
+    grid-area: menu;
+}
+
+#main-menu > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#main-menu > ul > li {
+    text-align: center;
+    flex-grow: 1;
+}
+
+#main-menu > ul > li:hover {
+    background: rgba(200, 200, 200, 0.3);
+}
+
+#main-menu > ul > li > a {
+    text-decoration: none;
+    padding: 10px 0px;
+    display: block;
+    color: #000;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+
+.category {
+    width: 50%;
+    text-align: center;
+    padding: 50px 100px;
+    border: 1px solid #ccc;
+    background: rgba(200, 200, 200, 0.2);
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+.site-footer {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.product {
+    display: grid;
+    grid-template-areas: "big-image big-image small-image1 title title title"
+                         "big-image big-image small-image2 desc  desc  price";
+    grid-template-columns: 120px 0px 100px auto;
+    border-bottom: 1px solid #444;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.product > .product-title{grid-area: title; border: 1px dashed #ccc;}
+.product > .product-desc{grid-area: desc; border: 1px dashed #ccc; text-align: left;}
+.product > .product-price{grid-area: price; border: 1px dashed #ccc; text-align: right;}
+.product > .product-big-image{grid-area: big-image; border: 1px dashed #ccc; height: 100px; width: 120px;}
+.product > .image-1{grid-area: small-image1; border: 1px dashed #ccc; width: 80px;}
+.product > .image-2{grid-area: small-image2; border: 1px dashed #ccc; width: 80px;}
+
+.bookmarks {
+    border: 1px solid #000000;
+    background: #fefefe;
+    position: fixed;
+    display: block;
+    right: 0px;
+    top: 50px;
+}
+*/

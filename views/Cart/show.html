@@ -1,0 +1,22 @@
+{% extends "_global/index.html" %} {% block main %}
+<h4 class="text-center">Spisak proizvoda u korpi je: </h4>
+
+<div class="container">
+    <div class="row">
+        <div class="card bookmark-card">
+            <div class="bookmarks card-body">
+                Please wait, loading cart...
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</div>
+<form action="{{BASE}}cart/order/" class="text-center">
+    <button type="submit" class="btn btn-primary">Naruci proizvode</button>
+</form>
+
+{% endblock %} {% block naslov %} {{category.name|escape}} {% endblock %}

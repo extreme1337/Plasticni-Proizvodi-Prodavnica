@@ -1,0 +1,21 @@
+{% extends "_global/index.html" %} {% block main %}
+<div class="container">
+    <div class="options opcije">
+        <a class="btn btn-primary" href="{{BASE}}user/profile" role="button">Nazad na komandnu tablu</a>
+        <a class="btn btn-success" href="{{ BASE }}user/manufacturers/add" role="button" >Dodaj proizvođača</a>
+     <!--   <a class="btn btn-danger" href="{{ BASE }}user/manufacturers/delete" role="button">Obriši proizvođača</a> -->
+    </div>
+
+     <div class = "manufacturers">
+        <ul>
+            {% for manufacturer in manufacturers %}
+            <li>
+                <a href="{{ BASE }}user/manufacturers/edit/{{ manufacturer.manufacturer_id }}">
+                    {{ manufacturer.name|escape }}
+                </a>         
+            {% endfor %}
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

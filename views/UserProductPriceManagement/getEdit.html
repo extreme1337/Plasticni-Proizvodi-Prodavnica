@@ -1,0 +1,37 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container">
+    <div class = "options">
+        <a href="{{ BASE }}user/profile" ><button type="button" class="btn btn-primary">Nazad na komandu tablu</button></a>
+        <a href="{{ BASE }}user/products/add"><button type="button" class="btn btn-success">Dodaj novi proizvod</button></a>
+        <a href="{{ BASE }}user/prices/add"><button type="button" class="btn btn-success">Dodaj novu cenu proizvoda</button></a>
+    </div>
+
+    <form class = "price-form" method="POST" 
+    class="col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+    <div class="card">
+        <div class="card-header">
+            Uredi cenu proizvod
+        </div>
+        <div class="card-body">
+            <div>
+                <label for="name">Naziv proizvoda: </label>
+                <input type="text" id="name" name="name" disabled class="form-control" value="{{ product.name|escape }}">
+            </div>
+
+            <div>
+                <label for="amount">Cena proizvoda: </label>
+                <input type="number" min="1" id="amount" name="amount" required class="form-control" value="{{ product_price.amount }}">
+            </div>
+            
+        </div>
+
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">
+                Sačuvaj izmene
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}

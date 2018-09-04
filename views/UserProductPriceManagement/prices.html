@@ -1,0 +1,23 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container">
+    <div class = "options">
+        <a href="{{ BASE }}user/profile" ><button type="button" class="btn btn-primary">Nazad na komandu tablu</button></a>
+        <a href="{{ BASE }}user/prices/add"><button type="button" class="btn btn-success">Dodaj novu cenu proizvoda</button></a>
+        <a href="{{ BASE }}user/products"><button type="button" class="btn btn-success">Lista proizvoda</button></a>
+    </div>
+
+    <div class = "prices">
+        <ul>
+            {% for product_price in productPrices %}
+            <li>
+                <a href="{{ BASE }}user/prices/edit/{{ product_price.product_price_id }}">
+                    {{ product_price.product_id|escape }}
+                </a>         
+            {% endfor %}
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

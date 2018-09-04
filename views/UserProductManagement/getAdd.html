@@ -1,0 +1,79 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="container">
+    <div class = "options">
+        <a class="btn btn-primary opcije" href="{{ BASE }}user/products" role="button">Lista svih proizvoda</a>
+    </div>
+
+    <form class = "product-form col-12 col-sm-10 col-md-10 col-lg-8 col-xl-10" method="POST" enctype="multipart/form-data">
+    <div class="card">
+            <div class="card-header">
+                    Dodaj proizvod
+                </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="name">Naziv proizvoda: </label>
+                <input type="text" id="name" name="name" required class="form-control"
+                placeholder="Unesite naziv proizvoda">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Opis: </label>
+                <input type="text" id="description" name="description"  required class="form-control"
+                placeholder="Unesite opis">
+            </div>
+
+            <div class="form-group">
+                <label for="image">Slika: </label>
+                <input type="file" id="image" name="image" accept="image/jpeg, image/png">
+            </div>
+
+            <div class="form-group">
+                <label for="manufacturer_id">Proizvođač: </label>
+                <select class="form-control" name="manufacturer_id" id="manufacturer_id">
+                                {% for manufacturer in manufacturers %}
+                                <option value="{{ manufacturer.manufacturer_id }}">
+                                    {{ manufacturer.name }}
+                                </option>
+                                {% endfor %}
+                            </select>
+            </div>
+
+            <div class="form-controll"> 
+                <label for="category_id">Kategorija: </label>
+                {% for category in categories %}
+                <input  type="checkbox" name="category_id[]" id="category_id" value="{{ category.category_id }}">
+                {{ category.name|escape }}
+                {% endfor %}        
+            </div>
+           
+            <div>
+                <label for="amount">Cena proizvoda: </label>
+                <input type="number" min="1" id="amount" name="amount" required class="form-control" value="{{ productPrice.amount }}">
+            </div>
+        </div>
+    </div>
+            <div class="card-footer">
+                    <button type="submit" class="btn btn-success">
+                        Dodaj proizvod
+                </button>
+            </div>
+    </form>
+</div>
+<!--
+            
+            <div>
+                <label for="amount">Cena proizvoda: </label>
+                <input type="number" min="1" id="amount" name="amount" required class="form-control" value="{{ product_price.amount }}">
+            </div>
+      
+        <div>
+            <label for="is_active">Active: </label>
+            <input type="number" min="0" max="2" id="is_active" name="is_active">
+        </div>
+
+-->
+        
+   
+{% endblock %}

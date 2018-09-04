@@ -1,0 +1,48 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+<div class="lista-proizvoda">
+    <ul>
+         {% for product in productsInCategory %}
+   <!--         <li class = "product">
+                <a href="{{ BASE }}product/{{ product.product_id }}" class = "product-title">
+                    {{ product.name|escape }}
+                </a>
+                <span class = "product-desc">{{product.description}}</span>
+                <span class = "product-price">{{product_price.amount}}</span>
+
+                <a href="{{ BASE }}product/{{ product.product_id }}" class="product-big-image">
+                    <img src="#" alt="Velika slika - {{ product.product_id }}">
+                </a>
+                 <img src="#" alt="Mala slika 1 - {{ product.product_id }}" class="product-small-image image-1">
+                <img src="#" alt="Mala slika 2 - {{ product.product_id }}" class="product-small-image image-2">
+                </li>  -->
+
+                <li class="col-lg-3 col-md-6 col-sm-12 col-12 kontejner-proizvoda">
+                    <div class=" moj-card">
+
+                        <div class="slika" style="background-image: url({{ BASE }}assets/uploads/{{ product.picture_path }})">
+                        </div>
+                      
+                            <!-- {{ BASE }}assets/uploads/{{ product.picture_path }} -->
+                        <div class="card-body">
+                        <a href="{{ BASE }}product/{{ product.product_id }}" class = "product-title">
+                            {{ product.name|escape }}
+                        </a>
+                            <div class = "product-desc">{{product.description}}</div>
+                            <div class = "product-price">{{product_price.amount}}</div>
+                            <div class="dugmici">
+                                <button class="detaljnije">Detaljnije</button>
+                                <button class="korpa" title="Stavi u korpu" onclick="addBookmark({{ product.product_id }});"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+
+{% block naslov %}
+{{ category.name|escape }}
+{% endblock %}

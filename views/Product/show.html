@@ -1,0 +1,45 @@
+{% extends "_global/index.html" %}
+
+{% block main %}
+   
+  <div class="container">
+      <div class="row">
+<div class="col-md-6">
+        
+                <img src="{{ BASE }}assets/uploads/{{ product.picture_path }}" alt="Banner 1" class="img-thumbnail">
+                
+                
+            
+</div>
+<div class="col-md-6">
+        <h1>{{ product.name|escape }}</h1>
+        <p><strong> Opis:</strong>  <br> {{ product.description }}</p>
+        <p class="cena"> Cena: <br> {{ productPrice.amount }} RSD</p>
+        <p>Karakteristike: </p>
+        <ul>
+            {% for product_characteristic in productCharacteristicsInProduct %}
+                <li>
+                    {{ product_characteristic.value|escape }}<br>
+            {% endfor %}
+        </ul>
+        
+        <button class="korpa" title="Stavi u korpu" onclick="addBookmark({{ product.product_id }});"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Dodaj u korpu</button>
+
+<!-- TRENUTNO NEMA FUNKCIJU
+        <ul>
+                {% for product_characteristic in productCharacteristicsInProduct %}
+                    <li>
+                        {{ productCharacteristicsInProduct.value|escape }}<br>
+                {% endfor %}
+            </ul>  -->
+    </div>
+</div>
+</div>
+    
+{% endblock %}
+
+
+
+{% block naslov %}
+{{ product.name|escape }}
+{% endblock %}
